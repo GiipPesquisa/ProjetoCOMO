@@ -1,0 +1,2 @@
+# ProjetoCOMO
+COMO é um interface de comunicação que realizar um processo de comando computacional, através de rastreamento dos movimentos oculares, para executar ações dentro e fora do computador. Em um primeiro momento, movendo o ponteiro do mouse, visando o uso de um computador e em um segundo, promovendo os comandos para o movimento de um pequeno robô carro, já existente, em quatro direções, mas podendo ser adaptado para diversas finalidades.
