@@ -15,7 +15,7 @@ sudo apt install libext6
 sudo apt install libxrender1
 sudo apt install libfontconfig1
 sudo pip3 install opencv-python
-sudo pip3 install numpy == 1.16.1
+sudo pip3 install numpy
 sudo pip3 install opencv_python
 sudo pip3 install dlib
 sudo pip3 install python-osc
