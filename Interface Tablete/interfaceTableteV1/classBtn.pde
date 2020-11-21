@@ -36,7 +36,7 @@ class Btn {
       yPos=mouseY;
       break;
     case 1://Operation 
-      switch(_commandWalk) {
+      switch(_commandWalk.toUpperCase()) {
       case "STOP":
         xPos = xPos+0;
         break;

@@ -42,18 +42,20 @@ void mousePressed() {
 //==============================================
 
 void oscEvent(OscMessage theOscMessage) {
+
+  commandWalk = ""; 
   //Verify tag
-  if (theOscMessage.checkAddrPattern("/bang")==true) {
+  if (theOscMessage.checkAddrPattern("/status")==true) {
 
     //Verify type message
     if (theOscMessage.checkTypetag("s")) {
 
       //Select value
       commandWalk = theOscMessage.get(0).stringValue();
-
-      //Debug
-      debugger("Receive: " + commandWalk);
+      debugger("Receive: " + theOscMessage.toString() + " " + commandWalk);
       return;
     }
   }
+
+debugger("Receive: " + theOscMessage.toString() + " " + commandWalk);
 }
