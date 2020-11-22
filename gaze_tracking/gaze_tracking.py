@@ -18,6 +18,9 @@ class GazeTracking(object):
         self.eye_left = None
         self.eye_right = None
         self.calibration = Calibration()
+        
+        self.center = 0.6
+        self.delta = 0.15
 
         # _face_detector is used to detect faces
         self._face_detector = dlib.get_frontal_face_detector()
@@ -59,6 +62,7 @@ class GazeTracking(object):
         Arguments:
             frame (numpy.ndarray): The frame to analyze
         """
+        
         self.frame = frame
         self._analyze()
 
@@ -99,12 +103,12 @@ class GazeTracking(object):
     def is_right(self):
         """Returns true if the user is looking to the right"""
         if self.pupils_located:
-            return self.horizontal_ratio() <= 0.35
+            return self.horizontal_ratio() <= self.center - self.delta
 
     def is_left(self):
         """Returns true if the user is looking to the left"""
         if self.pupils_located:
-            return self.horizontal_ratio() >= 0.65
+            return self.horizontal_ratio() >= self.center + self.delta
 
     def is_center(self):
         """Returns true if the user is looking to the center"""
