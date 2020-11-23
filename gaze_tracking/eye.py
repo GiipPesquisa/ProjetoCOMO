@@ -106,9 +106,17 @@ class Eye(object):
             points = self.RIGHT_EYE_POINTS
         else:
             return
+        
 
         self.blinking = self._blinking_ratio(landmarks, points)
         self._isolate(original_frame, landmarks, points)
+        
+        if self.frame.size == 0:
+            print ("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            return
+#         
+#         print ("side: " +str(side) + " size: " +str(self.frame.size))
+
 
         if not calibration.is_complete():
             calibration.evaluate(self.frame, side)
